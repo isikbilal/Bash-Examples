@@ -1,0 +1,25 @@
+# Komut satırından parametre olarak girilen dizinde bulunan bugün (sadece gün ve ay kontrolü yeterli) oluşturulmuş dosyaların isimlerini yazdıran bash kodu.
+
+# In the directory entered as a parameter from the command line today (only the day and month control is sufficient) bash code that prints the names of the created files.
+
+#!/bin/bash
+bugun=`date | cut -d" " -f2,3,4`
+echo $bugun
+echo -n "lütfen bir dizin giriniz:"
+read dizin
+if [ -d $dizin ]
+	then
+	ls -l $dizin > liste.txt
+	while read a1 a2 a3 a4 a5 a6 a7 a8 a9
+		do
+		listebugun=`echo $a6 $a7`
+		if [[ $bugun == $listebugun ]]
+		then
+		echo "$a9"
+		fi
+		done <liste.txt
+	rm liste.txt
+else
+echo "Geçersiz bir değer girdiniz. Lütfen bir dizin giriniz:"
+fi
+

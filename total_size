@@ -1,0 +1,13 @@
+# Komut satırından parametre olarak girilen dizindeki düzenli dosyaların toplam boyutunu hesaplayan bir script.
+
+# A script that calculates the total size of regular files in the directory entered as a parameter from the command line.
+
+#!/bin/bash
+ls -l $1 | egrep "^-" > dosyalar.txt
+while read x1 x2 x3 x4 x5 x6 x7 x8 x9
+do
+(( toplam=$toplam+$x5 ))
+done < dosyalar.txt
+echo $toplam
+rm dosyalar.txt
+

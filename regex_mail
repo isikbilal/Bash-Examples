@@ -1,0 +1,3 @@
+#!/bin/bash
+egrep --color  "(^[a-Z0-9\.\_\-]+)@([a-z0-9\_]+)\.([a-z]{3})(\.[a-z]{2})?$" mail_list.txt																																																																																																																																																																																																																																																																																				 #---> Bu tam çalışıyor.
+

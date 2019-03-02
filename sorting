@@ -1,0 +1,26 @@
+
+#Girilen sayıları büyükten küçüğe doğru sıralayacak bash kodu
+
+# Bash code that sorting the entered numbers from large to small
+
+#!/bin/bash
+dizi=($@)
+uzunluk=${#dizi[*]}
+for (( i=0; i<uzunluk; i++ ))
+do
+	for (( j=0; j<uzunluk; j++ ))
+	do
+		if (( ${dizi[$i]} > ${dizi[$j]} ))
+		then
+			tut=${dizi[$j]}
+			dizi[$j]=${dizi[$i]}
+			dizi[$i]=$tut
+		fi
+	done
+done
+
+for k in ${dizi[*]}
+do
+	$k >> yeniSayilar
+done
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+egrep --color "^(((http://)|(http://www.)|(www.))?[a-z0-9]+)\.([a-z]{2,4})(\.[a-z]{2})?$" url_list.txt
+
+
